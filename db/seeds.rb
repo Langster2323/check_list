@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+BOOL = [0, 1]
+
+5.times do
+  list = List.create!(title: Faker::StarWars.specie)
+  5.times do
+    task.create!(body: Faker::StarWars.quote, completed: BOOL)
+  end
+end
