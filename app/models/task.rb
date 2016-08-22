@@ -4,5 +4,4 @@ class Task < ApplicationRecord
   validate :completed, presence: true
 
   belongs_to :list
-  has_many :list_id
 end

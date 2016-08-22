@@ -9,7 +9,8 @@ BOOL = [0, 1]
 
 5.times do
   list = List.create!(title: Faker::StarWars.specie)
-  5.times do
-    task.create!(body: Faker::StarWars.quote, completed: BOOL)
-  end
+end
+
+5.times do
+  task.create!(body: Faker::StarWars.quote, completed: BOOL)
 end

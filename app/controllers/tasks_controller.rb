@@ -23,9 +23,15 @@ class TasksController < ApplicationController
     task = Task.new(task_params)
     task.list_id = params[:list_id]
     if task.save
-      redirect_to_list_task_path(params[:list_id], task)
+      redirect_to task_path(params[:list_id], task)
     else
       render :new
     end
   end
+end
+
+private
+
+def task_params
+  params.require(:task).permit(:body)
 end
