@@ -11,3 +11,8 @@ class ListsController < ApplicationController
     }
   end
 end
+
+private
+def list_params
+  params.require(:list).permit(:title)
+end
