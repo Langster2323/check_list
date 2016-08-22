@@ -1,0 +1,17 @@
+<h2 class='text-center head-title'><%= link_to("Places To Go", "/") %></h2>
+
+<% lists.each do |list| %>
+  <h4 class='text-center'><%= link_to(list.name, "/lists/#{list.id}") %></h4>
+    <% list.tasks.each do |task| %>
+      <div class='row'>
+        <div class='pos col-s-1'><%= task.position %></div>
+        <div class='bod col-s-5 col-lg-8 col-md-7 col-m-6'><%= task.body %></div>
+        <% if task.completed %>
+          <div class='com col-s-1'>Complete</div>
+        <% else%>
+          <div class='incom col-s-1'>Incomplete</div>
+        <% end %>
+        <div class='view col-s-2 col-m-1'><%= link_to("Show Task", list_task_path(list, task), class: 'btn btn-primary') %></div>
+      </div>
+    <% end %>
+<% end %>
